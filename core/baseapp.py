@@ -1,3 +1,6 @@
+from view.view_book import ViewBook
+from view.input_book import InputBook
+from core.search_helper import SearchHelper
 class BaseApp:
     def run(self):
         while True:
@@ -14,14 +17,13 @@ class BaseApp:
                 print("Pilihan tidak ada.")
 
     def list_book(self):
-        pass
-
+        ViewBook.list(self)
     def add_book(self):
-        pass
-
+        InputBook.input(self)
     def search_book(self):
-        pass
-
+        InputBook.search(self)
+        a = ViewBook(self.books)
+        a.list()
     def __menu(self):
         self.clear()
 
